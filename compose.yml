@@ -1,0 +1,13 @@
+services:
+  frontend:
+    build:
+      context: ./next-app
+      dockerfile: ./DockerFile
+    volumes:
+      - ./next-app:/usr/src/next-app
+      - /next-app/node_modules
+    ports:
+      - '3002:3002'
+    environment:
+      - NODE_TLS_REJECT_UNAUTHORIZED=0
+    tty: true

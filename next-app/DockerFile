@@ -6,8 +6,10 @@ WORKDIR /usr/src/next-app
 
 RUN apt-get update
 
-# COPY package.json yarn.lock ./
-# RUN yarn install --frozen-lockfile
+COPY package.json package-lock.json ./
+RUN npm install
+
+CMD ["npm", "run", "dev"]
 
 COPY . ./
 

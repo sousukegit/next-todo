@@ -5,7 +5,7 @@ DOCKER_COMPOSE_FILE := compose.yml
 
 # サービスの起動（バックグラウンド実行）
 up:
-	docker compose -f $(DOCKER_COMPOSE_FILE) up
+	docker compose -f $(DOCKER_COMPOSE_FILE) up -d
 # サービスの停止
 down:
 	docker compose -f $(DOCKER_COMPOSE_FILE) down
